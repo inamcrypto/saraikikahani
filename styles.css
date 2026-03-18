@@ -967,6 +967,7 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto;
         font-size: 1.08rem;
         line-height: 2.05;
+        padding-bottom: 96px;
     }
 
     .modal-content .mobile-story-page {
@@ -1026,6 +1027,7 @@ h1, h2, h3, h4, h5, h6 {
     .modal-content .reader-nav {
         position: sticky;
         bottom: 0;
+        z-index: 6;
         margin-top: 20px;
         padding: 14px 4px 4px;
         background: linear-gradient(180deg, rgba(255, 253, 248, 0), rgba(255, 253, 248, 0.94) 30%, rgba(255, 244, 224, 0.98) 100%);
@@ -1093,5 +1095,3 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 }
-
-
