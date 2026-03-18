@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    Saraiki Bal Kahani - Children's Story Website
    Child-Friendly Design with Saraiki Language
    ============================================ */
@@ -796,6 +796,15 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 4px solid var(--primary);
 }
 
+.reader-page-text-wrap {
+    display: grid;
+    gap: 10px;
+}
+
+.reader-page-chip {
+    display: none;
+}
+
 .reader-nav {
     display: flex;
     align-items: center;
@@ -927,7 +936,119 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.2rem;
     }
 
+    .modal-content {
+        width: min(100%, calc(100vw - 12px));
+        max-height: calc(100vh - 12px);
+        margin: 6px;
+        border-radius: 28px;
+        overflow: hidden;
+    }
 
+    .modal-content .story-reader {
+        padding: 54px 16px 18px;
+        background:
+            radial-gradient(circle at top right, rgba(123, 44, 191, 0.16), transparent 32%),
+            linear-gradient(180deg, #fff8ef 0%, #fffdf8 50%, #fff3dd 100%);
+    }
+
+    .modal-content .reader-header {
+        margin-bottom: 18px;
+        padding: 0 8px 18px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 209, 102, 0.65);
+    }
+
+    .modal-content .reader-title {
+        font-size: clamp(1.9rem, 7vw, 2.45rem);
+        line-height: 1.35;
+    }
+
+    .modal-content .reader-content {
+        min-height: auto;
+        font-size: 1.08rem;
+        line-height: 2.05;
+    }
+
+    .modal-content .mobile-story-page {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .modal-content .mobile-story-page.has-image .reader-page-image {
+        margin: 0;
+        padding: 8px;
+        border-radius: 26px;
+        border: none;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 240, 214, 0.95));
+        box-shadow: 0 20px 40px rgba(123, 44, 191, 0.12);
+    }
+
+    .modal-content .mobile-story-page .reader-page-image img {
+        border-radius: 20px;
+        max-height: 38vh;
+        object-fit: cover;
+    }
+
+    .modal-content .mobile-story-page.has-image .reader-page-text-wrap {
+        margin: -34px 12px 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-content .mobile-story-page:not(.has-image) .reader-page-text-wrap {
+        margin-top: 0;
+    }
+
+    .modal-content .mobile-story-page .reader-page-chip {
+        display: inline-flex;
+        justify-self: start;
+        align-items: center;
+        padding: 5px 14px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #ffd166, #ffb347);
+        color: #7a3b00;
+        font-weight: 800;
+        font-size: 0.9rem;
+        box-shadow: 0 10px 20px rgba(255, 177, 71, 0.28);
+    }
+
+    .modal-content .mobile-story-page .reader-page-text-wrap p {
+        background: rgba(255, 255, 255, 0.97);
+        border-right: none;
+        border-top: 5px solid var(--primary);
+        border-radius: 24px;
+        padding: 18px 16px 20px;
+        box-shadow: 0 14px 34px rgba(7, 59, 76, 0.08);
+        text-align: right;
+    }
+
+    .modal-content .reader-nav {
+        position: sticky;
+        bottom: 0;
+        margin-top: 20px;
+        padding: 14px 4px 4px;
+        background: linear-gradient(180deg, rgba(255, 253, 248, 0), rgba(255, 253, 248, 0.94) 30%, rgba(255, 244, 224, 0.98) 100%);
+        backdrop-filter: blur(8px);
+        border-top: none;
+    }
+
+    .modal-content .nav-btn {
+        min-width: 54px;
+        min-height: 54px;
+        justify-content: center;
+        border-radius: 18px;
+        box-shadow: 0 14px 28px rgba(77, 157, 224, 0.24);
+    }
+
+    .modal-content .page-indicator {
+        min-width: 72px;
+        text-align: center;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 8px 18px rgba(7, 59, 76, 0.08);
+    }
 
     .reader-title {
         font-size: 2rem;
@@ -956,4 +1077,21 @@ h1, h2, h3, h4, h5, h6 {
         width: 95%;
         margin: var(--spacing-sm);
     }
+
+    .modal-content .story-reader {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .modal-content .mobile-story-page.has-image .reader-page-text-wrap {
+        margin-inline: 6px;
+        margin-top: -24px;
+    }
+
+    .modal-content .mobile-story-page .reader-page-text-wrap p {
+        padding: 16px 14px 18px;
+        font-size: 1rem;
+    }
 }
+
+

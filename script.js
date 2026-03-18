@@ -1,4 +1,4 @@
-// ============================================
+﻿// ============================================
 // Saraiki Bal Kahani - JavaScript
 // Children's Story Website Functionality
 // ============================================
@@ -11,6 +11,7 @@ let currentPage = 0;
 // DOM Elements
 const storiesGrid = document.getElementById('storiesGrid');
 const storyModal = document.getElementById('storyModal');
+const modalContent = document.querySelector('.modal-content');
 const readerTitle = document.getElementById('readerTitle');
 const readerContent = document.getElementById('readerContent');
 const readerCategory = document.getElementById('readerCategory');
@@ -103,6 +104,7 @@ function createStoryCard(story) {
 function openStory(story) {
     currentStory = story;
     currentPage = 0;
+    modalContent.dataset.storyId = String(story.id);
 
     readerTitle.textContent = story.title;
     readerCategory.textContent = categoryLabels[story.category];
@@ -135,17 +137,27 @@ function updateReaderContent() {
     readerContent.innerHTML = paragraphs.map((text, index) => {
         const isCurrentPage = index === currentPage;
         const pageImage = getStoryPageImage(currentStory, index);
+        const useEnhancedStoryLayout = true;
         const imageMarkup = pageImage ? `
             <figure class="reader-page-image">
                 <img src="${pageImage.src}" alt="${pageImage.alt}">
             </figure>
         ` : '';
-        const pageClass = pageImage ? 'reader-page has-image' : 'reader-page';
+        const pageClass = [
+            'reader-page',
+            pageImage ? 'has-image' : '',
+            useEnhancedStoryLayout ? 'mobile-story-page' : ''
+        ].filter(Boolean).join(' ');
+        const textMarkup = `
+            <div class="reader-page-text-wrap">
+                ${useEnhancedStoryLayout ? `<span class="reader-page-chip">صفحہ ${index + 1}</span>` : ''}
+                <p>${formatStoryText(text)}</p>
+            </div>
+        `;
 
         return `
             <div class="${pageClass}" style="display: ${isCurrentPage ? 'block' : 'none'};">
-                <p>${formatStoryText(text)}</p>
-                ${imageMarkup}
+                ${imageMarkup}${textMarkup}
             </div>
         `;
     }).join('');
@@ -162,6 +174,7 @@ function updateReaderContent() {
 function closeStory() {
     storyModal.classList.remove('active');
     document.body.style.overflow = '';
+    delete modalContent.dataset.storyId;
     currentStory = null;
     currentPage = 0;
 }
@@ -261,3 +274,7 @@ function setupEventListeners() {
         }
     });
 }
+
+
+
+
