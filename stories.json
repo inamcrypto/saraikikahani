@@ -2,6 +2,7 @@
     "stories": [
         {
             "id": 1,
+            "slug": "rangan-da-pul",
             "title": "رنگاں دا پُل",
             "category": "folk",
             "emoji": "🌈",
@@ -27,6 +28,7 @@
         },
         {
             "id": 2,
+            "slug": "chann-te-udda-ghubara",
             "title": "چنّ تے اُڈدا غبارہ",
             "category": "moral",
             "emoji": "🎈",
@@ -41,6 +43,7 @@
         },
         {
             "id": 3,
+            "slug": "rano-te-bolda-tota",
             "title": "رانو تے بولدا طوطا",
             "category": "folk",
             "emoji": "🦜",
@@ -55,6 +58,7 @@
         },
         {
             "id": 4,
+            "slug": "aj-tan-takia-vi-chheenk-piya",
             "title": "اَج تاں تکیا وی چھینک پیا!",
             "category": "animal",
             "emoji": "🐱",
@@ -69,6 +73,7 @@
         },
         {
             "id": 5,
+            "slug": "jadon-jota-bhag-piya",
             "title": "جَدوں جوتا بھاگ پیا",
             "category": "animal",
             "emoji": "👟",
@@ -83,6 +88,7 @@
         },
         {
             "id": 6,
+            "slug": "shazi-te-udda-paratha",
             "title": "شازی تے اُڈدا پراٹھا",
             "category": "animal",
             "emoji": "🫓",
@@ -97,6 +103,7 @@
         },
         {
             "id": 7,
+            "slug": "guddo-te-ulti-chatri",
             "title": "گُڈّو تے اُلٹی چھتری",
             "category": "animal",
             "emoji": "☔",
@@ -111,6 +118,7 @@
         },
         {
             "id": 8,
+            "slug": "pappu-te-topi-vali-bakri",
             "title": "پپّو تے ٹوپی والی بکری",
             "category": "animal",
             "emoji": "🐐",

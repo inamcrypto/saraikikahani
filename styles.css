@@ -428,6 +428,18 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.7;
 }
 
+.story-archive-link {
+    display: inline-flex;
+    margin-top: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.story-archive-link:hover {
+    text-decoration: underline;
+}
+
 .section-title {
     font-size: 2.5rem;
     color: var(--text);
@@ -488,6 +500,9 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
     cursor: pointer;
     border: 4px solid transparent;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .story-card:hover {

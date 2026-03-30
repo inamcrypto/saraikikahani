@@ -30,6 +30,17 @@ const categoryLabels = {
     folk: 'لوک کہانی'
 };
 
+const storySlugs = {
+    1: 'rangan-da-pul',
+    2: 'chann-te-udda-ghubara',
+    3: 'rano-te-bolda-tota',
+    4: 'aj-tan-takia-vi-chheenk-piya',
+    5: 'jadon-jota-bhag-piya',
+    6: 'shazi-te-udda-paratha',
+    7: 'guddo-te-ulti-chatri',
+    8: 'pappu-te-topi-vali-bakri'
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadStories();
@@ -78,13 +89,15 @@ function renderStories(storiesToRender) {
 
 // Create Story Card Element
 function createStoryCard(story) {
-    const card = document.createElement('article');
+    const card = document.createElement('a');
     const categoryLabel = categoryLabels[story.category] || story.category;
     const storyTitleId = `story-title-${story.id}`;
     const storyDescriptionId = `story-description-${story.id}`;
+    const slug = story.slug || storySlugs[story.id] || `story-${story.id}`;
 
     card.className = `story-card ${story.category}`;
     card.dataset.id = story.id;
+    card.href = `stories/${slug}/index.html`;
     card.setAttribute('aria-labelledby', storyTitleId);
     card.setAttribute('aria-describedby', storyDescriptionId);
 
@@ -96,14 +109,12 @@ function createStoryCard(story) {
             <span class="story-category">${categoryLabel}</span>
             <h3 class="story-title" id="${storyTitleId}">${story.title}</h3>
             <p class="story-description" id="${storyDescriptionId}">${story.description}</p>
-            <button class="story-btn" type="button" aria-label="Read ${story.title}">
+            <span class="story-btn" aria-hidden="true">
                 <span>📖</span>
                 <span>پڑھو</span>
-            </button>
+            </span>
         </div>
     `;
-
-    card.addEventListener('click', () => openStory(story));
 
     return card;
 }
