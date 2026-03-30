@@ -304,6 +304,39 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 500px;
 }
 
+.hero-keyword-line,
+.hero-search-copy,
+.section-seo-copy,
+.seo-kicker,
+.seo-copy,
+.seo-story-list,
+.faq-question,
+.faq-answer,
+.footer-seo-line {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-keyword-line {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(77, 157, 224, 0.12);
+    color: var(--secondary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.hero-search-copy {
+    max-width: 34rem;
+    margin-bottom: var(--spacing-md);
+    color: rgba(7, 59, 76, 0.85);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -385,6 +418,14 @@ h1, h2, h3, h4, h5, h6 {
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
+}
+
+.section-seo-copy {
+    max-width: 42rem;
+    margin: var(--spacing-sm) auto 0;
+    color: rgba(7, 59, 76, 0.72);
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .section-title {
@@ -542,6 +583,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   SEO Intro
+   ============================================ */
+.seo-intro {
+    padding: 0 0 var(--spacing-lg);
+}
+
+.seo-panel {
+    background:
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.35), transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 244, 253, 0.98));
+    border: 1px solid rgba(77, 157, 224, 0.16);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: clamp(24px, 4vw, 40px);
+}
+
+.seo-kicker {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: rgba(239, 71, 111, 0.1);
+    color: var(--accent);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.seo-title {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text);
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    line-height: 1.2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.seo-copy {
+    max-width: 48rem;
+    margin-bottom: var(--spacing-sm);
+    color: rgba(7, 59, 76, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.seo-story-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin-top: var(--spacing-md);
+}
+
+.seo-story-list li {
+    padding: 10px 16px;
+    border-radius: var(--radius-pill);
+    background: rgba(77, 157, 224, 0.12);
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* ============================================
    About Section
    ============================================ */
 .about-section {
@@ -589,6 +693,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   FAQ Section
+   ============================================ */
+.faq-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, #E8F4FD 0%, #FFF9F0 100%);
+}
+
+.faq-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.faq-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(77, 157, 224, 0.12);
+}
+
+.faq-question {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.faq-answer {
+    color: rgba(7, 59, 76, 0.82);
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+/* ============================================
    Footer
    ============================================ */
 .footer {
@@ -628,6 +772,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.2rem;
     opacity: 0.9;
     margin-bottom: var(--spacing-sm);
+}
+
+.footer-seo-line {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.98rem;
+    opacity: 0.88;
 }
 
 .copyright {
@@ -859,6 +1009,10 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
     .about-card:last-child {
         grid-column: span 2;
     }
@@ -920,6 +1074,10 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 auto var(--spacing-md);
     }
 
+    .hero-search-copy {
+        margin-inline: auto;
+    }
+
     .stories-grid {
         grid-template-columns: 1fr;
     }
@@ -930,6 +1088,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .about-card:last-child {
         grid-column: span 1;
+    }
+
+    .seo-panel,
+    .faq-card {
+        padding: var(--spacing-md);
+    }
+
+    .seo-story-list {
+        justify-content: center;
     }
 
     .reader-content {
@@ -1068,6 +1235,22 @@ h1, h2, h3, h4, h5, h6 {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .seo-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-keyword-line,
+    .hero-search-copy,
+    .section-seo-copy,
+    .seo-kicker,
+    .seo-copy,
+    .seo-story-list,
+    .faq-question,
+    .faq-answer,
+    .footer-seo-line {
+        font-size: 0.95rem;
     }
 
     .filter-btn {

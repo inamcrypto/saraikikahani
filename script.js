@@ -21,6 +21,7 @@ const nextBtn = document.getElementById('nextBtn');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const storiesSchema = document.getElementById('storiesSchema');
 
 // Category Labels in Saraiki
 const categoryLabels = {
@@ -56,6 +57,7 @@ async function loadStories() {
         }
     }
 
+    updateStoriesSchema(stories);
     renderStories(stories);
 }
 
@@ -76,19 +78,25 @@ function renderStories(storiesToRender) {
 
 // Create Story Card Element
 function createStoryCard(story) {
-    const card = document.createElement('div');
+    const card = document.createElement('article');
+    const categoryLabel = categoryLabels[story.category] || story.category;
+    const storyTitleId = `story-title-${story.id}`;
+    const storyDescriptionId = `story-description-${story.id}`;
+
     card.className = `story-card ${story.category}`;
     card.dataset.id = story.id;
+    card.setAttribute('aria-labelledby', storyTitleId);
+    card.setAttribute('aria-describedby', storyDescriptionId);
 
     card.innerHTML = `
         <div class="story-cover">
             <span class="story-emoji">${story.emoji}</span>
         </div>
         <div class="story-info">
-            <span class="story-category">${categoryLabels[story.category]}</span>
-            <h3 class="story-title">${story.title}</h3>
-            <p class="story-description">${story.description}</p>
-            <button class="story-btn">
+            <span class="story-category">${categoryLabel}</span>
+            <h3 class="story-title" id="${storyTitleId}">${story.title}</h3>
+            <p class="story-description" id="${storyDescriptionId}">${story.description}</p>
+            <button class="story-btn" type="button" aria-label="Read ${story.title}">
                 <span>📖</span>
                 <span>پڑھو</span>
             </button>
@@ -98,6 +106,79 @@ function createStoryCard(story) {
     card.addEventListener('click', () => openStory(story));
 
     return card;
+}
+
+function updateStoriesSchema(storiesToDescribe) {
+    if (!storiesSchema) {
+        return;
+    }
+
+    const schema = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'CollectionPage',
+                name: 'Saraiki Kids Stories',
+                description: 'Read Saraiki kids stories, Saraiki bedtime stories, and moral stories for children.',
+                inLanguage: ['skr', 'en'],
+                about: [
+                    'Saraiki kids stories',
+                    'Saraiki bedtime stories',
+                    'Saraiki moral stories',
+                    'Saraiki folk stories'
+                ],
+                numberOfItems: storiesToDescribe.length,
+                hasPart: storiesToDescribe.map((story, index) => ({
+                    '@type': 'CreativeWork',
+                    position: index + 1,
+                    name: story.title,
+                    description: story.description,
+                    genre: categoryLabels[story.category] || story.category,
+                    inLanguage: 'skr'
+                }))
+            },
+            {
+                '@type': 'FAQPage',
+                inLanguage: 'en',
+                mainEntity: [
+                    {
+                        '@type': 'Question',
+                        name: 'What kind of Saraiki kids stories can I read here?',
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'You can read Saraiki bedtime stories, folk stories, and moral stories for children, all written in a simple and friendly style.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        name: 'Are these Saraiki children stories good for bedtime reading?',
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'Yes. The current collection is short, gentle, and easy for parents to read aloud during bedtime or quiet reading time.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        name: 'Does the site include Saraiki moral stories for kids?',
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'Yes. Some stories focus on friendship, kindness, courage, and small life lessons that work well for young readers.'
+                        }
+                    },
+                    {
+                        '@type': 'Question',
+                        name: 'Who are Saraiki kids stories on this site for?',
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: 'The site is designed for children, parents, and teachers who want simple Saraiki reading material and enjoyable story time.'
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
+    storiesSchema.textContent = JSON.stringify(schema);
 }
 
 // Open Story Reader
