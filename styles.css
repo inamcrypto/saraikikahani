@@ -583,69 +583,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   SEO Intro
-   ============================================ */
-.seo-intro {
-    padding: 0 0 var(--spacing-lg);
-}
-
-.seo-panel {
-    background:
-        radial-gradient(circle at top left, rgba(255, 209, 102, 0.35), transparent 32%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 244, 253, 0.98));
-    border: 1px solid rgba(77, 157, 224, 0.16);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    padding: clamp(24px, 4vw, 40px);
-}
-
-.seo-kicker {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: var(--spacing-sm);
-    padding: 6px 14px;
-    border-radius: var(--radius-pill);
-    background: rgba(239, 71, 111, 0.1);
-    color: var(--accent);
-    font-size: 0.92rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.seo-title {
-    margin-bottom: var(--spacing-sm);
-    color: var(--text);
-    font-size: clamp(2rem, 3.4vw, 3rem);
-    line-height: 1.2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.seo-copy {
-    max-width: 48rem;
-    margin-bottom: var(--spacing-sm);
-    color: rgba(7, 59, 76, 0.82);
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-.seo-story-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    list-style: none;
-    margin-top: var(--spacing-md);
-}
-
-.seo-story-list li {
-    padding: 10px 16px;
-    border-radius: var(--radius-pill);
-    background: rgba(77, 157, 224, 0.12);
-    color: var(--text);
-    font-weight: 700;
-}
-
-/* ============================================
    About Section
    ============================================ */
 .about-section {
@@ -1278,3 +1215,4 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 }
+
