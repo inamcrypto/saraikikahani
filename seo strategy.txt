@@ -1,0 +1,35 @@
+**Priority Plan**
+
+**High Impact**
+- Create a dedicated URL for every story. This is the single biggest opportunity. Each story should have its own page with a unique title tag, meta description, visible story text, heading, and internal links.
+- Server-render or statically generate the story list and story content. Right now too much depends on JavaScript. Search engines may still see it, but plain HTML is much safer and stronger.
+- Add canonical tags to the homepage and every future story page so search engines know the preferred URL version.
+- Add an XML sitemap and reference it in `robots.txt`. This becomes especially important once story pages exist.
+- Build internal linking around search intent. Link from the homepage to each story, and between related stories like bedtime, moral, and folk stories.
+
+**Medium Impact**
+- Expand the homepage copy with a stronger intro paragraph in Saraiki plus a short English support paragraph. The page already targets useful keywords, but it needs more depth and originality around the topic.
+- Improve metadata coverage: add `og:image`, `og:url`, `twitter:image`, and consistent absolute URLs.
+- Strengthen structured data. The current schema is a nice start, but individual story pages should eventually use `Article` or `CreativeWork` schema with title, language, description, and image where relevant.
+- Add image SEO basics for all story artwork: descriptive filenames, solid `alt` text, and ideally modern compressed formats if performance becomes an issue.
+- Add breadcrumbs once multiple story pages or categories exist.
+
+**Nice to Have**
+- Create category landing pages like “Saraiki moral stories,” “Saraiki folk stories,” and “Saraiki bedtime stories.” These can target broader non-brand searches.
+- Add a short author/editor/about trust section to support quality signals, especially for parent/teacher audiences.
+- Review language targeting more precisely if you want to rank across Saraiki, Urdu-script, and English-support queries.
+- Add lightweight performance tuning if needed, especially around fonts and image delivery, because better Core Web Vitals can help indirectly.
+
+**Recommended Order**
+1. Story pages with real URLs
+2. Static/server-rendered HTML
+3. Sitemap + canonical
+4. Internal linking
+5. Metadata/social preview improvements
+6. Category pages
+7. Trust/content depth upgrades
+
+**Expected SEO Outcome**
+With the current structure, the homepage can rank a little for broad terms. With dedicated story pages, you’d open up ranking potential for individual story names, long-tail children’s story searches, and category-level queries. That’s the step that changes this from a simple site into a search-growable content site.
+
+If you want, I can turn this into a very practical checklist mapped to your current files and site structure, still without making any changes.
