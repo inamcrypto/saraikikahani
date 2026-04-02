@@ -310,8 +310,6 @@ h1, h2, h3, h4, h5, h6 {
 .seo-kicker,
 .seo-copy,
 .seo-story-list,
-.faq-question,
-.faq-answer,
 .footer-seo-line {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -645,46 +643,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   FAQ Section
-   ============================================ */
-.faq-section {
-    padding: var(--spacing-xl) 0;
-    background: linear-gradient(180deg, #E8F4FD 0%, #FFF9F0 100%);
-}
-
-.faq-header {
-    margin-bottom: var(--spacing-md);
-}
-
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-}
-
-.faq-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(77, 157, 224, 0.12);
-}
-
-.faq-question {
-    margin-bottom: var(--spacing-sm);
-    color: var(--text);
-    font-size: 1.2rem;
-    line-height: 1.5;
-    font-weight: 700;
-}
-
-.faq-answer {
-    color: rgba(7, 59, 76, 0.82);
-    line-height: 1.75;
-    font-size: 1rem;
-}
-
-/* ============================================
    Footer
    ============================================ */
 .footer {
@@ -961,10 +919,6 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
-
     .about-card:last-child {
         grid-column: span 2;
     }
@@ -1042,8 +996,7 @@ h1, h2, h3, h4, h5, h6 {
         grid-column: span 1;
     }
 
-    .seo-panel,
-    .faq-card {
+    .seo-panel {
         padding: var(--spacing-md);
     }
 
@@ -1199,8 +1152,6 @@ h1, h2, h3, h4, h5, h6 {
     .seo-kicker,
     .seo-copy,
     .seo-story-list,
-    .faq-question,
-    .faq-answer,
     .footer-seo-line {
         font-size: 0.95rem;
     }

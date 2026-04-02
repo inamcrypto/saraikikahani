@@ -146,44 +146,6 @@ function updateStoriesSchema(storiesToDescribe) {
                     genre: categoryLabels[story.category] || story.category,
                     inLanguage: 'skr'
                 }))
-            },
-            {
-                '@type': 'FAQPage',
-                inLanguage: 'en',
-                mainEntity: [
-                    {
-                        '@type': 'Question',
-                        name: 'What kind of Saraiki kids stories can I read here?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'You can read Saraiki bedtime stories, folk stories, and moral stories for children, all written in a simple and friendly style.'
-                        }
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'Are these Saraiki children stories good for bedtime reading?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Yes. The current collection is short, gentle, and easy for parents to read aloud during bedtime or quiet reading time.'
-                        }
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'Does the site include Saraiki moral stories for kids?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'Yes. Some stories focus on friendship, kindness, courage, and small life lessons that work well for young readers.'
-                        }
-                    },
-                    {
-                        '@type': 'Question',
-                        name: 'Who are Saraiki kids stories on this site for?',
-                        acceptedAnswer: {
-                            '@type': 'Answer',
-                            text: 'The site is designed for children, parents, and teachers who want simple Saraiki reading material and enjoyable story time.'
-                        }
-                    }
-                ]
             }
         ]
     };
