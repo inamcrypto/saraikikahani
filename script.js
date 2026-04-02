@@ -41,7 +41,9 @@ const storySlugs = {
     7: 'guddo-te-ulti-chatri',
     8: 'pappu-te-topi-vali-bakri',
     9: 'badal-di-jaib-wich-kih-si',
-    10: 'chandi-de-beej'
+    10: 'chandi-de-beej',
+    11: 'gol-lamma-te-nika-sitara',
+    12: 'oh-din-jadon-almari-hass-pai'
 };
 
 // Initialize
