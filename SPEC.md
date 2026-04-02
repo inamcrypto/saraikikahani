@@ -102,7 +102,7 @@
 3. Scroll → Smooth scrolling with sticky header
 4. Hover on cards → Visual feedback
 
-### Data Structure (stories.json)
+### Data Structure (inline `#storiesData` JSON in `index.html`)
 ```json
 {
   "stories": [

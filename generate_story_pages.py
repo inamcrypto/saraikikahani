@@ -1,9 +1,19 @@
 import json
 import html
+import re
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
-stories = json.loads((root / "stories.json").read_text(encoding="utf-8-sig"))["stories"]
+index_html = (root / "index.html").read_text(encoding="utf-8-sig")
+stories_match = re.search(
+    r'<script id="storiesData" type="application/json">\s*(\{.*?\})\s*</script>',
+    index_html,
+    re.DOTALL,
+)
+if not stories_match:
+    raise RuntimeError("Could not find inline storiesData in index.html")
+
+stories = json.loads(stories_match.group(1))["stories"]
 
 category_labels = {
     "animal": "\u062c\u0627\u0646\u0648\u0631",
