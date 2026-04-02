@@ -22,6 +22,7 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 const storiesSchema = document.getElementById('storiesSchema');
+const storiesDataElement = document.getElementById('storiesData');
 
 // Category Labels in Saraiki
 const categoryLabels = {
@@ -38,7 +39,9 @@ const storySlugs = {
     5: 'jadon-jota-bhag-piya',
     6: 'shazi-te-udda-paratha',
     7: 'guddo-te-ulti-chatri',
-    8: 'pappu-te-topi-vali-bakri'
+    8: 'pappu-te-topi-vali-bakri',
+    9: 'badal-di-jaib-wich-kih-si',
+    10: 'chandi-de-beej'
 };
 
 // Initialize
@@ -47,25 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
 });
 
-// Load Stories from JSON
+// Load Stories from inline page data
 async function loadStories() {
     try {
-        const response = await fetch('stories.json');
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-        stories = data.stories;
+        const data = JSON.parse(storiesDataElement?.textContent || '{}');
+        stories = Array.isArray(data.stories) ? data.stories : [];
     } catch (error) {
         console.error('Error loading stories:', error);
+        stories = [];
+    }
 
-        if (window.STORIES_DATA?.stories?.length) {
-            stories = window.STORIES_DATA.stories;
-        } else {
-            storiesGrid.innerHTML = '<p class="error">کہانیاں لود نہیں ہو سکیاں۔</p>';
-            return;
-        }
+    if (!stories.length) {
+        storiesGrid.innerHTML = '<p class="error">کہانیاں لود نہیں ہو سکیاں۔</p>';
+        return;
     }
 
     updateStoriesSchema(stories);
