@@ -297,11 +297,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-description {
+    font-family: var(--font-heading);
     font-size: 1.3rem;
     color: var(--text);
     opacity: 0.85;
     margin-bottom: var(--spacing-md);
     max-width: 500px;
+    line-height: 2;
 }
 
 .hero-keyword-line,
@@ -445,9 +447,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-subtitle {
+    font-family: var(--font-heading);
     font-size: 1.2rem;
     color: var(--text);
     opacity: 0.7;
+    line-height: 1.9;
 }
 
 /* Category Filter */
@@ -567,11 +571,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-description {
+    font-family: var(--font-heading);
     font-size: 1rem;
     color: var(--text);
     opacity: 0.7;
     margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+    line-height: 2;
 }
 
 .story-btn {
@@ -636,10 +641,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-card p {
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     color: var(--text);
     opacity: 0.8;
-    line-height: 1.7;
+    line-height: 2;
 }
 
 /* ============================================
@@ -817,9 +823,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reader-content {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 1.4rem;
-    line-height: 2;
+    line-height: 2.2;
     color: var(--text);
     text-align: justify;
     min-height: 300px;
