@@ -222,6 +222,10 @@ h3 {
     margin-bottom: var(--spacing-sm);
 }
 
+.story-article > h2:first-child {
+    display: none;
+}
+
 .story-block + .story-block {
     margin-top: var(--spacing-md);
 }
