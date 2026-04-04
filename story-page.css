@@ -172,6 +172,19 @@ h3 {
     border: 1px solid rgba(7, 59, 76, 0.1);
 }
 
+.story-start-link {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+    padding: 10px 18px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 700;
+    background: #fff1c9;
+    border: 1px solid rgba(7, 59, 76, 0.12);
+}
+
 .story-cover-panel {
     min-height: 260px;
     background: linear-gradient(145deg, color-mix(in srgb, var(--story-color, var(--secondary)) 78%, white), rgba(255, 255, 255, 0.95));
@@ -381,5 +394,82 @@ h3 {
     .story-meta {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .story-hero {
+        padding: var(--spacing-md) 0 var(--spacing-sm);
+    }
+
+    .story-hero-card {
+        gap: var(--spacing-sm);
+        padding: 20px 18px;
+        border-width: 3px;
+    }
+
+    .story-badge {
+        margin-bottom: 8px;
+    }
+
+    .story-title {
+        font-size: clamp(1.9rem, 9vw, 2.5rem);
+        margin-bottom: 10px;
+    }
+
+    .story-description {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .story-meta {
+        gap: 10px;
+    }
+
+    .story-chip {
+        padding: 4px 12px;
+    }
+
+    .story-cover-panel {
+        display: none;
+    }
+
+    .story-layout {
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .story-article {
+        padding: 20px 18px;
+    }
+
+    .story-article h2 {
+        font-size: 1.65rem;
+        margin-bottom: 10px;
+    }
+
+    .story-page--focused .story-meta {
+        display: none;
+    }
+
+    .story-page--focused .story-start-link {
+        display: inline-flex;
+    }
+
+    .story-page--focused .story-article > h2:first-child {
+        display: none;
+    }
+
+    .story-page--focused .story-block p {
+        padding: 16px 18px;
+    }
+
+    .story-page--focused .story-sidebar {
+        gap: 16px;
+    }
+
+    .story-page--focused .story-sidebar .sidebar-card:first-child {
+        display: none;
+    }
+
+    .story-page--focused .story-sidebar .sidebar-card {
+        padding: 18px;
     }
 }
