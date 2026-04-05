@@ -411,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
    Stories Section
    ============================================ */
 .stories-section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0 var(--spacing-lg);
     background: var(--background);
 }
 
@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .filter-btn {
