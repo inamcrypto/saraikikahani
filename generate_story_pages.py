@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
+SITE_URL = "https://www.saraikikids.pk"
 index_html = (root / "index.html").read_text(encoding="utf-8-sig")
 stories_match = re.search(
     r'<script id="storiesData" type="application/json">\s*(\{.*?\})\s*</script>',
@@ -83,6 +84,8 @@ for idx, story in enumerate(stories):
 </section>"""
         )
 
+    story_url = f"{SITE_URL}/stories/{story['slug']}/"
+
     related_markup = "\n".join(
         f"""<li>
     <a href="../{item["slug"]}/index.html">
@@ -142,7 +145,7 @@ for idx, story in enumerate(stories):
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{title} | Kahani Angan">
     <meta name="twitter:description" content="{description}">
-    <link rel="canonical" href="./">
+    <link rel="canonical" href="{story_url}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -250,7 +253,7 @@ library_page = f"""<!DOCTYPE html>
     <title>Saraiki Story Library | Kahani Angan</title>
     <meta name="description" content="Browse all Saraiki kids story pages on Kahani Angan, including bedtime, moral, and folk stories for children.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="./">
+    <link rel="canonical" href="{SITE_URL}/stories/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
